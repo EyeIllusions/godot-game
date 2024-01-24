@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt5lyeuoq0fxp"]
+
+[ext_resource type="PackedScene" uid="uid://u0uy3ju5yph2" path="res://godot-game/scenes/Player.tscn" id="1_l7dwl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_l7dwl")]
+speed = 1000
+
+[node name="Camera2D" type="Camera2D" parent="."]

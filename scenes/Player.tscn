@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://u0uy3ju5yph2"]
+
+[ext_resource type="Script" path="res://godot-game/Scrpts/movement.gd" id="1_rwwtn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcgv4"]
+size = Vector2(10, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kjtoi"]
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(10, 10)
+script = ExtResource("1_rwwtn")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xcgv4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(10, 10)
+mesh = SubResource("BoxMesh_kjtoi")
