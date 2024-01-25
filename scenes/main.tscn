@@ -19,6 +19,7 @@ speed = 1000
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Camera2D"]
+disable_mode = 1
 
 [node name="Right wall" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
 position = Vector2(558.5, -3)
@@ -39,5 +40,3 @@ debug_color = Color(0, 0.603922, 0.678431, 0.419608)
 position = Vector2(-1, 314)
 shape = SubResource("RectangleShape2D_5aqgg")
 debug_color = Color(0, 0.603922, 0.678431, 0.419608)
-
-[node name="Boarders" type="Node2D" parent="."]
