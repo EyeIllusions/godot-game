@@ -1,22 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://u0uy3ju5yph2"]
 
-[ext_resource type="Script" path="res://godot-game/Scrpts/movement.gd" id="1_rwwtn"]
+[ext_resource type="Script" path="res://Scrpts/movement.gd" id="1_rwwtn"]
+[ext_resource type="Texture2D" uid="uid://byqo5skum27k" path="res://Themes/icon.svg" id="2_e6osu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xcgv4"]
 size = Vector2(10, 10)
 
-[sub_resource type="BoxMesh" id="BoxMesh_kjtoi"]
-
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(10, 10)
+input_pickable = true
 script = ExtResource("1_rwwtn")
+speed = 5000
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_e6osu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xcgv4")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(10, 10)
-mesh = SubResource("BoxMesh_kjtoi")

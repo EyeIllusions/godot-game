@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt5lyeuoq0fxp"]
+[gd_scene load_steps=5 format=3 uid="uid://bt5lyeuoq0fxp"]
 
-[ext_resource type="PackedScene" uid="uid://u0uy3ju5yph2" path="res://godot-game/scenes/Player.tscn" id="1_l7dwl"]
+[ext_resource type="PackedScene" uid="uid://u0uy3ju5yph2" path="res://scenes/Player.tscn" id="1_l7dwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q65gk"]
+size = Vector2(43, 650)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcep0"]
+size = Vector2(43, 650)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5aqgg"]
+size = Vector2(1138, 39)
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,3 +17,27 @@
 speed = 1000
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Camera2D"]
+
+[node name="Right wall" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(558.5, -3)
+shape = SubResource("RectangleShape2D_q65gk")
+debug_color = Color(0, 0.603922, 0.678431, 0.419608)
+
+[node name="Left wall" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(-572, -3)
+shape = SubResource("RectangleShape2D_bcep0")
+debug_color = Color(0, 0.603922, 0.678431, 0.419608)
+
+[node name="Top wall" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(-1, -313.5)
+shape = SubResource("RectangleShape2D_5aqgg")
+debug_color = Color(0, 0.603922, 0.678431, 0.419608)
+
+[node name="Bottom wall" type="CollisionShape2D" parent="Camera2D/StaticBody2D"]
+position = Vector2(-1, 314)
+shape = SubResource("RectangleShape2D_5aqgg")
+debug_color = Color(0, 0.603922, 0.678431, 0.419608)
+
+[node name="Boarders" type="Node2D" parent="."]

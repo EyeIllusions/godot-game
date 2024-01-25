@@ -8,7 +8,9 @@ func _ready():
 
 
 
-func _process(delta):
+func _physics_process(delta):
 	horizontal = Input.get_axis("Left","Right")
 	vertical = Input.get_axis("Up","Down")
-	position += Vector2(horizontal,vertical) *delta * speed
+	velocity = Vector2(horizontal,vertical)  * speed
+	move_and_slide()
+
